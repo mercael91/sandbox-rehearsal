@@ -11,6 +11,9 @@ def divide(a, b):
         return "Cannot divide by zero"
     return a / b
 
+def subtract(a, b):
+    return a - b
+
 
 def format_price(amount):
     return f"{amount:.2f}₽"
