@@ -11,8 +11,7 @@ def divide(a, b):
 
 
 def format_price(amount):
-    # BUG 1: typo VAHCAR-like — returns "RU" instead of currency symbol
-    return f"{amount:.2f} RU"
+    return f"{amount:.2f}₽"
 
 
 def parse_int(text):
