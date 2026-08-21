@@ -22,4 +22,6 @@ def parse_int(text):
 
 def average(values):
     # BUG 3: empty list crashes with ZeroDivisionError
+    if not values:
+        return 0
     return sum(values) / len(values)
