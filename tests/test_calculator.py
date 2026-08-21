@@ -1,4 +1,4 @@
-from calculator import add, divide, format_price, parse_int, average, multiply
+from calculator import add, divide, format_price, parse_int, average, multiply, subtract
 import pytest
 
 def test_add():
@@ -22,3 +22,8 @@ def test_average():
     assert average([1, 2, 3]) == 2
     with pytest.raises(ValueError, match="Cannot calculate average of an empty list"):
         average([])
+
+def test_subtract():
+    assert subtract(5, 3) == 2
+    assert subtract(5, -3) == 8
+    assert subtract(-5, -3) == -2
