@@ -16,10 +16,14 @@ def format_price(amount):
 
 
 def parse_int(text):
-    # BUG 2: int() raises on non-numeric input without a message
-    return int(text)
+    try:
+        return int(text)
+    except ValueError:
+        raise ValueError("Invalid input: could not convert string to integer") from None
 
 
 def average(values):
     # BUG 3: empty list crashes with ZeroDivisionError
+    if not values:
+        raise ValueError("Cannot calculate average of an empty list")
     return sum(values) / len(values)
