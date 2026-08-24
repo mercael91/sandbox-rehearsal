@@ -30,7 +30,8 @@ def parse_int(text):
 
 
 def average(values):
-    # BUG 3: empty list crashes with ZeroDivisionError
+    # Convert to list to support any iterable input.
+    values = list(values)
     if not values:
         raise ValueError("Cannot calculate average of an empty list")
     return sum(values) / len(values)
