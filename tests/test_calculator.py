@@ -18,6 +18,9 @@ def test_parse_int():
 def test_format_price():
     assert format_price(123.456) == "123.46₽"
 
+def test_format_price_rounding():
+    assert format_price(2.675) == "2.68₽"
+
 def test_average():
     assert average([1, 2, 3]) == 2
     with pytest.raises(ValueError, match="Cannot calculate average of an empty list"):

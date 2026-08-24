@@ -1,5 +1,7 @@
 """Simple calculator with intentional bugs for rehearsal."""
 
+from decimal import Decimal, ROUND_HALF_UP
+
 def add(a, b):
     return a + b
 
@@ -16,7 +18,8 @@ def subtract(a, b):
 
 
 def format_price(amount):
-    return f"{amount:.2f}₽"
+    value = Decimal(str(amount)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+    return f"{value:.2f}₽"
 
 
 def parse_int(text):
