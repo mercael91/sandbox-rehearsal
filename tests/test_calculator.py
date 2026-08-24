@@ -24,6 +24,9 @@ def test_parse_int_strips_whitespace():
     assert parse_int("  42  ") == 42
     assert parse_int("\t42\n") == 42
 
+def test_parse_int_leading_plus():
+    assert parse_int("+42") == 42
+
 def test_format_price():
     assert format_price(123.456) == "123.46₽"
 
