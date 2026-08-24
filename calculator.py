@@ -23,6 +23,8 @@ def format_price(amount):
 
 
 def parse_int(text):
+    if isinstance(text, str):
+        text = text.strip()
     try:
         return int(text)
     except ValueError:
