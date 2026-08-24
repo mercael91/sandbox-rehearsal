@@ -23,6 +23,7 @@ def test_format_price_rounding():
 
 def test_average():
     assert average([1, 2, 3]) == 2
+    assert average((1, 2, 3)) == 2
     with pytest.raises(ValueError, match="Cannot calculate average of an empty list"):
         average([])
 
