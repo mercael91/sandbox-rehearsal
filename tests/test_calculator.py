@@ -20,6 +20,10 @@ def test_parse_int():
     with pytest.raises(ValueError, match="Invalid input: could not convert string to integer"):
         parse_int("abc")
 
+def test_parse_int_strips_whitespace():
+    assert parse_int("  42  ") == 42
+    assert parse_int("\t42\n") == 42
+
 def test_format_price():
     assert format_price(123.456) == "123.46₽"
 
