@@ -34,6 +34,8 @@ def parse_int(text):
 def average(values):
     # Convert to list to support any iterable input.
     values = list(values)
+    # Filter out None values before checking emptiness.
+    values = [v for v in values if v is not None]
     if not values:
         raise ValueError("Cannot calculate average of an empty list")
     return sum(values) / len(values)
