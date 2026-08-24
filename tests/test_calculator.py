@@ -36,6 +36,10 @@ def test_average():
     with pytest.raises(ValueError, match="Cannot calculate average of an empty list"):
         average([])
 
+def test_average_skips_none():
+    assert average([1, None, 3]) == 2
+    assert average((None, 2, None, 4)) == 3
+
 def test_subtract():
     assert subtract(5, 3) == 2
     assert subtract(5, -3) == 8
