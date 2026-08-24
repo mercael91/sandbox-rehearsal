@@ -8,7 +8,8 @@ def test_multiply():
     assert multiply(2, 3) == 6
 
 def test_divide_by_zero():
-    assert divide(5, 0) == "Cannot divide by zero"
+    with pytest.raises(ZeroDivisionError, match="Cannot divide by zero"):
+        divide(5, 0)
 
 def test_parse_int():
     assert parse_int("123") == 123
