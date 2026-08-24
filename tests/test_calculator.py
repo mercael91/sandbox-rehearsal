@@ -11,6 +11,10 @@ def test_divide_by_zero():
     with pytest.raises(ZeroDivisionError, match="Cannot divide by zero"):
         divide(5, 0)
 
+def test_divide_precision():
+    assert divide(1, 3) == 0.333333
+    assert divide(2, 3) == 0.666667
+
 def test_parse_int():
     assert parse_int("123") == 123
     with pytest.raises(ValueError, match="Invalid input: could not convert string to integer"):
