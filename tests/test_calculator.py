@@ -22,7 +22,7 @@ def test_parse_int():
 
 def test_parse_int_strips_whitespace():
     assert parse_int("  42  ") == 42
-    assert parse_int("\t42\n") == 42
+    assert parse_int("	42\n") == 42
 
 def test_parse_int_leading_plus():
     assert parse_int("+42") == 42
