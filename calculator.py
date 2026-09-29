@@ -38,4 +38,7 @@ def average(values):
     values = [v for v in values if v is not None]
     if not values:
         raise ValueError("Cannot calculate average of an empty list")
+    for v in values:
+        if isinstance(v, bool) or not isinstance(v, (int, float, Decimal)):
+            raise ValueError(f"Cannot calculate average of non-numeric value: {v!r}")
     return sum(values) / len(values)
