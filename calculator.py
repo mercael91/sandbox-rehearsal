@@ -6,6 +6,8 @@ def add(a, b):
     return a + b
 
 def multiply(a, b):
+    if isinstance(a, str) or isinstance(b, str):
+        return float(a) * float(b)
     return a * b
 
 def divide(a, b):
